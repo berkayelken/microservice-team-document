@@ -1,5 +1,6 @@
 package io.github.berkayelken.team.document.domain.review;
 
+import io.github.berkayelken.team.document.domain.person.ManagerType;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -20,6 +21,8 @@ public class ReviewNote {
 	private String reviewedPersonId;
 	private String reviewerId;
 	private ReviewNoteType type;
+	private ManagerType reviewerType;
+	private LocalDate date;
 	private ExpectationType expectationType;
 	private ReviewRating ratingAtBeginning;
 	private String remarkAtBeginning;
