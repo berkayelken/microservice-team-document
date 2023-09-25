@@ -3,6 +3,8 @@ package io.github.berkayelken.team.document.domain;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
+
 public class TeamMemberTest {
 
 	@Test
@@ -32,6 +34,32 @@ public class TeamMemberTest {
 
 		teamMember.setSurname("Test Surname");
 		Assertions.assertEquals("Test Surname", teamMember.getSurname());
+	}
+
+	@Test
+	public void testTeamMemberBirthDate() {
+		TeamMember teamMember = new TeamMember();
+
+		LocalDateTime birthDate = LocalDateTime.now();
+		teamMember.setBirthDate(birthDate);
+		Assertions.assertEquals(birthDate, teamMember.getBirthDate());
+	}
+
+	@Test
+	public void testTeamMemberStartingDateOfEmployment() {
+		TeamMember teamMember = new TeamMember();
+
+		LocalDateTime startDate = LocalDateTime.now();
+		teamMember.setStartingDateOfEmployment(startDate);
+		Assertions.assertEquals(startDate, teamMember.getStartingDateOfEmployment());
+	}
+
+	@Test
+	public void testTeamMemberExExperienceAsMonth() {
+		TeamMember teamMember = new TeamMember();
+
+		teamMember.setExExperienceAsMonth(1);
+		Assertions.assertEquals(1, teamMember.getExExperienceAsMonth());
 	}
 
 	@Test
