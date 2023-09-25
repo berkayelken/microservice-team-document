@@ -14,8 +14,8 @@ public class TeamMemberTest {
 	public void testTeamMemberId() {
 		TeamMember teamMember = new TeamMember();
 
-		teamMember.setId(1);
-		Assertions.assertEquals(1, teamMember.getId());
+		teamMember.setId("id");
+		Assertions.assertEquals("id", teamMember.getId());
 	}
 
 	@Test
@@ -38,23 +38,34 @@ public class TeamMemberTest {
 	public void testTeamMemberLeaderId() {
 		TeamMember teamMember = new TeamMember();
 
-		teamMember.setLeaderId(1);
-		Assertions.assertEquals(1, teamMember.getLeaderId());
+		teamMember.setLeaderId("id");
+		Assertions.assertEquals("id", teamMember.getLeaderId());
 	}
 
 	@Test
 	public void testTeamMemberChapterId() {
 		TeamMember teamMember = new TeamMember();
 
-		teamMember.setChapterId(1);
-		Assertions.assertEquals(1, teamMember.getChapterId());
+		teamMember.setChapterId("id");
+		Assertions.assertEquals("id", teamMember.getChapterId());
 	}
 
 	@Test
 	public void testTeamMemberTeamId() {
 		TeamMember teamMember = new TeamMember();
 
-		teamMember.setTeamId(1);
-		Assertions.assertEquals(1, teamMember.getTeamId());
+		teamMember.setTeamId("id");
+		Assertions.assertEquals("id", teamMember.getTeamId());
+	}
+
+	@Test
+	public void testTeamMembersEquality() {
+		TeamMember teamMember = new TeamMember();
+		teamMember.setId("id");
+
+		TeamMember teamMember2 = new TeamMember();
+		teamMember2.setId("id");
+
+		Assertions.assertEquals(teamMember, teamMember2);
 	}
 }
