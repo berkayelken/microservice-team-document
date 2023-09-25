@@ -1,4 +1,4 @@
-package io.github.berkayelken.team.document.domain;
+package io.github.berkayelken.team.document.domain.person;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

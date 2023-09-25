@@ -1,27 +1,24 @@
-package io.github.berkayelken.team.document.domain;
+package io.github.berkayelken.team.document.domain.organization;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Getter
 @Setter
 @ToString
-public class TeamMember {
-
+public class Squad {
+	@Id
+	@MongoId (targetType = FieldType.STRING)
 	private String id;
 	private String name;
-	private String surname;
-	private LocalDate birthdate;
-	private LocalDateTime startingDateOfEmployment;
-	private int exExperienceAsMonth;
-	private String leaderId;
-	private String chapterId;
-	private String squadId;
+	private String productOwnerName;
+	private String responsibleLeaderId;
 
 	@Override
 	public boolean equals(Object o) {
@@ -29,7 +26,7 @@ public class TeamMember {
 			return true;
 		if (o == null || getClass() != o.getClass())
 			return false;
-		TeamMember that = (TeamMember) o;
+		Squad that = (Squad) o;
 		return Objects.equals(id, that.id);
 	}
 
