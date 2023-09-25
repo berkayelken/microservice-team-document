@@ -3,6 +3,7 @@ package io.github.berkayelken.team.document.domain;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class TeamMemberTest {
@@ -40,7 +41,7 @@ public class TeamMemberTest {
 	public void testTeamMemberBirthDate() {
 		TeamMember teamMember = new TeamMember();
 
-		LocalDateTime birthDate = LocalDateTime.now();
+		LocalDate birthDate = LocalDate.now();
 		teamMember.setBirthDate(birthDate);
 		Assertions.assertEquals(birthDate, teamMember.getBirthDate());
 	}
