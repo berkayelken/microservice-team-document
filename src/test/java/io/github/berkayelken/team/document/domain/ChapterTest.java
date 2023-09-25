@@ -34,6 +34,14 @@ public class ChapterTest {
 	}
 
 	@Test
+	public void testChapterResponsibleLeaderId() {
+		Chapter chapter = new Chapter();
+
+		chapter.setResponsibleLeaderId("id");
+		Assertions.assertEquals("id", chapter.getResponsibleLeaderId());
+	}
+
+	@Test
 	public void testTeamMembersEquality() {
 		Chapter chapter = new Chapter();
 		chapter.setId("id");
