@@ -146,4 +146,15 @@ public class ReviewNoteTest {
 		Assertions.assertEquals(ExpectationType.FROM_COMPANY, reviewNote.getExpectationType());
 	}
 
+	@Test
+	public void testReviewNoteEquality() {
+		ReviewNote reviewNote = new ReviewNote();
+		reviewNote.setId("id");
+
+		ReviewNote reviewNote2 = new ReviewNote();
+		reviewNote2.setId("id");
+
+		Assertions.assertEquals(reviewNote, reviewNote2);
+	}
+
 }
