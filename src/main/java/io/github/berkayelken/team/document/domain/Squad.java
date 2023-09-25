@@ -13,7 +13,7 @@ public class Squad {
 
 	private String id;
 	private String name;
-	private String productOwner;
+	private String productOwnerName;
 	private String responsibleLeaderId;
 
 	@Override

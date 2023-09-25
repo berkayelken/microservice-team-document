@@ -29,8 +29,8 @@ public class SquadTest {
 	public void testSquadProductOwner() {
 		Squad squad = new Squad();
 
-		squad.setProductOwner("Test Product Owner");
-		Assertions.assertEquals("Test Product Owner", squad.getProductOwner());
+		squad.setProductOwnerName("Test Product Owner Name");
+		Assertions.assertEquals("Test Product Owner Name", squad.getProductOwnerName());
 	}
 
 	@Test
