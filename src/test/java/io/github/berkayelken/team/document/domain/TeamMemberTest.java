@@ -38,12 +38,12 @@ public class TeamMemberTest {
 	}
 
 	@Test
-	public void testTeamMemberBirthDate() {
+	public void testTeamMemberBirthdate() {
 		TeamMember teamMember = new TeamMember();
 
 		LocalDate birthDate = LocalDate.now();
-		teamMember.setBirthDate(birthDate);
-		Assertions.assertEquals(birthDate, teamMember.getBirthDate());
+		teamMember.setBirthdate(birthDate);
+		Assertions.assertEquals(birthDate, teamMember.getBirthdate());
 	}
 
 	@Test
