@@ -1,5 +1,6 @@
 package io.github.berkayelken.team.document.domain.review;
 
+import io.github.berkayelken.team.document.domain.person.ManagerType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -50,6 +51,20 @@ public class ReviewNoteTest {
 	}
 
 	@Test
+	public void testReviewNoteReviewerType() {
+		ReviewNote reviewNote = new ReviewNote();
+
+		reviewNote.setReviewerType(ManagerType.LEADER);
+		Assertions.assertEquals(ManagerType.LEADER, reviewNote.getReviewerType());
+
+		reviewNote.setReviewerType(ManagerType.CHAPTER_LEAD);
+		Assertions.assertEquals(ManagerType.CHAPTER_LEAD, reviewNote.getReviewerType());
+
+		reviewNote.setReviewerType(ManagerType.PRODUCT_OWNER);
+		Assertions.assertEquals(ManagerType.PRODUCT_OWNER, reviewNote.getReviewerType());
+	}
+
+	@Test
 	public void testReviewNoteExpectationType() {
 		ReviewNote reviewNote = new ReviewNote();
 
@@ -79,6 +94,15 @@ public class ReviewNoteTest {
 
 		reviewNote.setExpectationType(ExpectationType.FROM_COMPANY);
 		Assertions.assertEquals(ExpectationType.FROM_COMPANY, reviewNote.getExpectationType());
+	}
+
+	@Test
+	public void testReviewNoteDate() {
+		ReviewNote reviewNote = new ReviewNote();
+
+		LocalDate deadline = LocalDate.now();
+		reviewNote.setDate(deadline);
+		Assertions.assertEquals(deadline, reviewNote.getDate());
 	}
 
 	@Test
