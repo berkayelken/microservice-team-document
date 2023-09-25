@@ -80,11 +80,11 @@ public class TeamMemberTest {
 	}
 
 	@Test
-	public void testTeamMemberTeamId() {
+	public void testTeamMemberSquadId() {
 		TeamMember teamMember = new TeamMember();
 
-		teamMember.setTeamId("id");
-		Assertions.assertEquals("id", teamMember.getTeamId());
+		teamMember.setSquadId("id");
+		Assertions.assertEquals("id", teamMember.getSquadId());
 	}
 
 	@Test

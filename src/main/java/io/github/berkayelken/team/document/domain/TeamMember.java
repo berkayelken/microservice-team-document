@@ -21,7 +21,7 @@ public class TeamMember {
 	private int exExperienceAsMonth;
 	private String leaderId;
 	private String chapterId;
-	private String teamId;
+	private String squadId;
 
 	@Override
 	public boolean equals(Object o) {
