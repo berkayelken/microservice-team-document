@@ -14,6 +14,7 @@ public class Chapter {
 	private String id;
 	private String name;
 	private String managerName;
+	private String responsibleLeaderId;
 
 	@Override
 	public boolean equals(Object o) {
