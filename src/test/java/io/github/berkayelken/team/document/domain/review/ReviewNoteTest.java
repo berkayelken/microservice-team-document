@@ -36,82 +36,17 @@ public class ReviewNoteTest {
 	}
 
 	@Test
-	public void testReviewNoteReviewRatingAtBeginning() {
+	public void testReviewNoteType() {
 		ReviewNote reviewNote = new ReviewNote();
 
-		reviewNote.setReviewRatingAtBeginning(ReviewRating.NEED_IMPROVING);
-		Assertions.assertEquals(1, reviewNote.getReviewRatingAtBeginning().getRatingValue());
+		reviewNote.setType(ReviewNoteType.ONE_TO_ONE);
+		Assertions.assertEquals(ReviewNoteType.ONE_TO_ONE, reviewNote.getType());
 
-		reviewNote.setReviewRatingAtBeginning(ReviewRating.UNDER_IMPROVING);
-		Assertions.assertEquals(2, reviewNote.getReviewRatingAtBeginning().getRatingValue());
+		reviewNote.setType(ReviewNoteType.MONTHLY);
+		Assertions.assertEquals(ReviewNoteType.MONTHLY, reviewNote.getType());
 
-		reviewNote.setReviewRatingAtBeginning(ReviewRating.IMPROVED);
-		Assertions.assertEquals(3, reviewNote.getReviewRatingAtBeginning().getRatingValue());
-
-		reviewNote.setReviewRatingAtBeginning(ReviewRating.ABOVE_EXPECTATIONS);
-		Assertions.assertEquals(4, reviewNote.getReviewRatingAtBeginning().getRatingValue());
-
-		reviewNote.setReviewRatingAtBeginning(ReviewRating.EXCELLENT);
-		Assertions.assertEquals(5, reviewNote.getReviewRatingAtBeginning().getRatingValue());
-	}
-
-	@Test
-	public void testReviewNoteRemarkAtBeginning() {
-		ReviewNote reviewNote = new ReviewNote();
-
-		reviewNote.setRemarkAtBeginning("Remark");
-		Assertions.assertEquals("Remark", reviewNote.getRemarkAtBeginning());
-	}
-
-	@Test
-	public void testReviewNoteImprovingDeadline() {
-		ReviewNote reviewNote = new ReviewNote();
-
-		LocalDate deadline = LocalDate.now();
-		reviewNote.setImprovingDeadline(deadline);
-		Assertions.assertEquals(deadline, reviewNote.getImprovingDeadline());
-	}
-
-	@Test
-	public void testReviewNoteReviewRatingAtTheEnd() {
-		ReviewNote reviewNote = new ReviewNote();
-
-		reviewNote.setReviewRatingAtTheEnd(ReviewRating.NEED_IMPROVING);
-		Assertions.assertEquals(1, reviewNote.getReviewRatingAtTheEnd().getRatingValue());
-
-		reviewNote.setReviewRatingAtTheEnd(ReviewRating.UNDER_IMPROVING);
-		Assertions.assertEquals(2, reviewNote.getReviewRatingAtTheEnd().getRatingValue());
-
-		reviewNote.setReviewRatingAtTheEnd(ReviewRating.IMPROVED);
-		Assertions.assertEquals(3, reviewNote.getReviewRatingAtTheEnd().getRatingValue());
-
-		reviewNote.setReviewRatingAtTheEnd(ReviewRating.ABOVE_EXPECTATIONS);
-		Assertions.assertEquals(4, reviewNote.getReviewRatingAtTheEnd().getRatingValue());
-
-		reviewNote.setReviewRatingAtTheEnd(ReviewRating.EXCELLENT);
-		Assertions.assertEquals(5, reviewNote.getReviewRatingAtTheEnd().getRatingValue());
-	}
-
-	@Test
-	public void testReviewNoteRemarkAtTheEnd() {
-		ReviewNote reviewNote = new ReviewNote();
-
-		reviewNote.setRemarkAtTheEnd("Remark");
-		Assertions.assertEquals("Remark", reviewNote.getRemarkAtTheEnd());
-	}
-
-	@Test
-	public void testReviewNoteReviewNoteType() {
-		ReviewNote reviewNote = new ReviewNote();
-
-		reviewNote.setReviewNoteType(ReviewNoteType.ONE_TO_ONE);
-		Assertions.assertEquals(ReviewNoteType.ONE_TO_ONE, reviewNote.getReviewNoteType());
-
-		reviewNote.setReviewNoteType(ReviewNoteType.MONTHLY);
-		Assertions.assertEquals(ReviewNoteType.MONTHLY, reviewNote.getReviewNoteType());
-
-		reviewNote.setReviewNoteType(ReviewNoteType.PERFORMANCE_PERIOD);
-		Assertions.assertEquals(ReviewNoteType.PERFORMANCE_PERIOD, reviewNote.getReviewNoteType());
+		reviewNote.setType(ReviewNoteType.PERFORMANCE_PERIOD);
+		Assertions.assertEquals(ReviewNoteType.PERFORMANCE_PERIOD, reviewNote.getType());
 	}
 
 	@Test
@@ -144,6 +79,71 @@ public class ReviewNoteTest {
 
 		reviewNote.setExpectationType(ExpectationType.FROM_COMPANY);
 		Assertions.assertEquals(ExpectationType.FROM_COMPANY, reviewNote.getExpectationType());
+	}
+
+	@Test
+	public void testReviewNoteReviewRatingAtBeginning() {
+		ReviewNote reviewNote = new ReviewNote();
+
+		reviewNote.setRatingAtBeginning(ReviewRating.NEED_IMPROVING);
+		Assertions.assertEquals(1, reviewNote.getRatingAtBeginning().getRatingValue());
+
+		reviewNote.setRatingAtBeginning(ReviewRating.UNDER_IMPROVING);
+		Assertions.assertEquals(2, reviewNote.getRatingAtBeginning().getRatingValue());
+
+		reviewNote.setRatingAtBeginning(ReviewRating.IMPROVED);
+		Assertions.assertEquals(3, reviewNote.getRatingAtBeginning().getRatingValue());
+
+		reviewNote.setRatingAtBeginning(ReviewRating.ABOVE_EXPECTATIONS);
+		Assertions.assertEquals(4, reviewNote.getRatingAtBeginning().getRatingValue());
+
+		reviewNote.setRatingAtBeginning(ReviewRating.EXCELLENT);
+		Assertions.assertEquals(5, reviewNote.getRatingAtBeginning().getRatingValue());
+	}
+
+	@Test
+	public void testReviewNoteRemarkAtBeginning() {
+		ReviewNote reviewNote = new ReviewNote();
+
+		reviewNote.setRemarkAtBeginning("Remark");
+		Assertions.assertEquals("Remark", reviewNote.getRemarkAtBeginning());
+	}
+
+	@Test
+	public void testReviewNoteImprovingDeadline() {
+		ReviewNote reviewNote = new ReviewNote();
+
+		LocalDate deadline = LocalDate.now();
+		reviewNote.setImprovingDeadline(deadline);
+		Assertions.assertEquals(deadline, reviewNote.getImprovingDeadline());
+	}
+
+	@Test
+	public void testReviewNoteReviewRatingAtTheEnd() {
+		ReviewNote reviewNote = new ReviewNote();
+
+		reviewNote.setRatingAtTheEnd(ReviewRating.NEED_IMPROVING);
+		Assertions.assertEquals(1, reviewNote.getRatingAtTheEnd().getRatingValue());
+
+		reviewNote.setRatingAtTheEnd(ReviewRating.UNDER_IMPROVING);
+		Assertions.assertEquals(2, reviewNote.getRatingAtTheEnd().getRatingValue());
+
+		reviewNote.setRatingAtTheEnd(ReviewRating.IMPROVED);
+		Assertions.assertEquals(3, reviewNote.getRatingAtTheEnd().getRatingValue());
+
+		reviewNote.setRatingAtTheEnd(ReviewRating.ABOVE_EXPECTATIONS);
+		Assertions.assertEquals(4, reviewNote.getRatingAtTheEnd().getRatingValue());
+
+		reviewNote.setRatingAtTheEnd(ReviewRating.EXCELLENT);
+		Assertions.assertEquals(5, reviewNote.getRatingAtTheEnd().getRatingValue());
+	}
+
+	@Test
+	public void testReviewNoteRemarkAtTheEnd() {
+		ReviewNote reviewNote = new ReviewNote();
+
+		reviewNote.setRemarkAtTheEnd("Remark");
+		Assertions.assertEquals("Remark", reviewNote.getRemarkAtTheEnd());
 	}
 
 	@Test
